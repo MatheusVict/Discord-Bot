@@ -31,13 +31,13 @@ class MyClient(discord.Client):
 
         if(payload.emoji.name == '🐧'):
            role = discord.utils.get(guild.roles, name = 'Peguim person')
-           await member.remove_roles(role)
+           await payload.member.add_roles(role)
         elif(payload.emoji.name == '😀'):
            role = discord.utils.get(guild.roles, name = 'Chocolate Lover')
-           await member.remove_roles(role)
+           await payload.member.add_roles(role)
         elif(payload.emoji.name == '🥹'):
            role = discord.utils.get(guild.roles, name = 'monkey funcky')
-           await member.remove_roles(role) 
+           await payload.member.add_roles(role)
 
 
     async def on_raw_reaction_remove(self, payload):
